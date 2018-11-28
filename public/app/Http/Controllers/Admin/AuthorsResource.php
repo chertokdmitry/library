@@ -16,8 +16,8 @@ class AuthorsResource extends Controller
      */
     public function index()
     {
-        $authors = Author::all();
-        $view = view('authors', ['authors' => $authors])->render();
+        $authors = Author::paginate(25);
+        $view = view('admin.authors', ['items' => $authors, 'header' => 'Все авторы'])->render();
         return (new Response($view));
     }
 

@@ -16,9 +16,11 @@ class BooksResource extends Controller
      */
     public function index()
     {
-            $books = Book::all();
-            $view = view('books', ['books' => $books])->render();
-            return (new Response($view));
+        $books = Book::with('author')->paginate(25);
+
+        $view = view('admin.books', ['books' => $books])->render();
+        return (new Response($view));
+
     }
 
     /**

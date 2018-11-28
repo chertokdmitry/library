@@ -10,14 +10,14 @@
     <title>Online Library</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('public/js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -39,18 +39,6 @@
     <div class="container">
         <form action="/search" method="get" class="form-inline mt-2 mt-md-0">
             <input  name="query" class="form-control mr-sm-2 form-control-dark " type="text" placeholder="Поиск" aria-label="Search">
-            <div class="form-check mb-2 mr-sm-2">
-                <input class="form-check-input" type="radio" id="books" name="table" value="books" checked>
-                <label class="form-check-label" for="books" style="color:#fff">
-                    книги
-                </label>
-            </div>
-            <div class="form-check mb-2 mr-sm-2">
-                <input class="form-check-input" type="radio" id="authors" name="table" value="authors">
-                <label class="form-check-label" for="authors" style="color:#fff">
-                    авторы
-                </label>
-            </div>
             <button class="btn btn-outline-secondary" type="submit">Найти</button>
         </form>
     </div>
@@ -89,9 +77,15 @@
                 </h6>
                 <ul class="nav flex-column mb-2">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">
-                            <span data-feather="books-open"></span>
+                        <a class="nav-link" href="/admin_books">
+                            <span data-feather="book-open"></span>
                             Все книги
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/update/books">
+                            <span data-feather="refresh-cw"></span>
+                            Обновить поиск
                         </a>
                     </li>
                 </ul>
@@ -101,9 +95,15 @@
                 </h6>
                 <ul class="nav flex-column mb-2">
                     <li class="nav-item">
-                        <a class="nav-link" href="/allauthors">
+                        <a class="nav-link" href="/admin_authors">
                             <span data-feather="users"></span>
                             Все авторы
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/update/authors">
+                            <span data-feather="refresh-cw"></span>
+                            Обновить поиск
                         </a>
                     </li>
                 </ul>

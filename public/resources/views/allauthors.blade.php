@@ -15,11 +15,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($items as $author)
+                @foreach ($items as $item)
                     <tr>
-                        <td>{{ $author['id'] }}</td>
-                        <td>{{ $author['first'] }}</td>
-                        <td>{{ $author['last'] }}</td>
+                        <td>{{ $item['id'] }}</td>
+                        <td>{{ $item['first'] }}</td>
+                        <td>{{ $item['last'] }}</td>
                     </tr>
                 @endforeach
                 </tbody>

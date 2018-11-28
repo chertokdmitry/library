@@ -11,33 +11,25 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 Route::get('/', 'IndexController@index');
+Route::get('/search',['uses' => 'SearchController@getSearch','as' => 'search']);
+Route::get('/allauthors', 'AuthorsController@index');
 
-Route::get('/about', function () {
-    return view('default');
-});
+//Route::delete('books/{id}', [
+//    'as' => 'delete_book',
+//    'uses' => 'Admin\BooksResource@destroy'
+//]);
 
-Route::delete('books/{id}', [
-    'as' => 'delete_book',
-    'uses' => 'Admin\BooksResource@destroy'
-]);
-
-Route::resource('/books', 'Admin\BooksResource')->middleware('auth');
-Route::resource('/authors', 'Admin\AuthorsResource')->middleware('auth');
+Route::resource('/admin_books', 'Admin\BooksResource')->middleware('auth');
+Route::resource('/admin_authors', 'Admin\AuthorsResource')->middleware('auth');
 
 Auth::routes();
 
-Route::get('/users', ['middleware' => ['auth'], 'uses'=>'Core@show']);
-
-//Route::get('/pages/add', 'Admin\CoreResource@add');
-
+//Route::get('/users', ['middleware' => ['auth'], 'uses'=>'Core@show']);
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/update/books', 'Admin\SearchUpdateController@books');
+Route::get('/update/authors', 'Admin\SearchUpdateController@authors');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 

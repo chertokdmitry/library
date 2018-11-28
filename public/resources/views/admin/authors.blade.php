@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.app')
 
 @section('content')
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
@@ -15,11 +15,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($items as $author)
+                @foreach ($items as $item)
                     <tr>
-                        <td>{{ $author['id'] }}</td>
-                        <td>{{ $author['first'] }}</td>
-                        <td>{{ $author['last'] }}</td>
+                        <td>{{ $item['id'] }}</td>
+                        <td>{{ $item['first'] }}</td>
+                        <td>{{ $item['last'] }}</td>
                     </tr>
                 @endforeach
                 </tbody>
