@@ -41,11 +41,11 @@ class BooksResource extends Controller
      */
     public function store(Request $request)
     {
-        $item = new Book;
-        $item->title = $request->title;
-        $item->author_id = $request->author_id;
-        $item->save();
-        return redirect('/books');
+//        $item = new Book;
+//        $item->title = $request->title;
+//        $item->author_id = $request->author_id;
+//        $item->save();
+        return redirect('/home');
     }
 
     /**

@@ -59,10 +59,6 @@
     @guest
         <div class="btn-group mr-2">
             <a class="btn btn-sm btn-outline-secondary" href="{{ route('login') }}">Войти</a>
-
-            @if (Route::has('register'))
-                <a class="btn btn-sm btn-outline-secondary" href="{{ route('register') }}">Зарегистрироваться</a>
-            @endif
         </div>
     @else
         <div class="btn-group mr-2">

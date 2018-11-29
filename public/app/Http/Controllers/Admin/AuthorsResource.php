@@ -40,11 +40,11 @@ class AuthorsResource extends Controller
      */
     public function store(Request $request)
     {
-        $item = new Author;
-        $item->first = $request->first;
-        $item->last = $request->last;
-        $item->save();
-        return redirect('/authors');
+//        $item = new Author;
+//        $item->first = $request->first;
+//        $item->last = $request->last;
+//        $item->save();
+        return redirect('/home');
     }
 
     /**

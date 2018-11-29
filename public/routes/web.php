@@ -15,17 +15,10 @@ Route::get('/', 'IndexController@index');
 Route::get('/search',['uses' => 'SearchController@getSearch','as' => 'search']);
 Route::get('/allauthors', 'AuthorsController@index');
 
-//Route::delete('books/{id}', [
-//    'as' => 'delete_book',
-//    'uses' => 'Admin\BooksResource@destroy'
-//]);
+Auth::routes();
 
 Route::resource('/admin_books', 'Admin\BooksResource')->middleware('auth');
 Route::resource('/admin_authors', 'Admin\AuthorsResource')->middleware('auth');
-
-Auth::routes();
-
-//Route::get('/users', ['middleware' => ['auth'], 'uses'=>'Core@show']);
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/update/books', 'Admin\SearchUpdateController@books');

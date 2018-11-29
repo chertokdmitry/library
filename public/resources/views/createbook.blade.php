@@ -1,28 +1,27 @@
-@extends('layouts.app')
+@extends('admin.app')
 
 @section('content')
-    <div class="content">
-        <div class="title m-b-md">
-            New book
-        </div>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <h3 style="margin-top:50px;">
+            <span>Добавить книгу</span>
+        </h3>
         <div>
-            <form method="POST" action="/books">
+            <form method="POST" action="/admin_books">
                 @csrf
-                <label for="title">title</label>
+                <label for="title">Название</label>
                 <input type="text"
                        class="form-control"
                        id="title"
-                       name="title"
-                       placeholder=" title">
+                       name="title">
                 <br><br>
-                <label for="author_id">author_id</label>
+                <label for="author_id">Автор</label>
                 <input type="text"
                        class="form-control"
                        id="author_id"
-                       name="author_id"
-                       placeholder=" author_id">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                       name="author_id">
+                <br>
+                <button type="submit" class="btn btn-primary">Добавить</button>
             </form>
         </div>
-    </div>
+    </main>
 @endsection

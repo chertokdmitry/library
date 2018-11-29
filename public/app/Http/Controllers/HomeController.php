@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Author;
+use App\Book;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $booksAmount = Book::count();
+        $authorsAmount = Author::count();
+
+        return view('home', ['books_amount'=> $booksAmount, 'authors_amount' => $authorsAmount]);
     }
 }

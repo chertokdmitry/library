@@ -1,28 +1,27 @@
-@extends('layouts.app')
+@extends('admin.app')
 
 @section('content')
-    <div class="content">
-        <div class="title m-b-md">
-            New author
-        </div>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <h3 style="margin-top:50px;">
+            <span>Добавить автора</span>
+        </h3>
         <div>
-            <form method="POST" action="/authors">
+            <form method="POST" action="/admin_authors">
                 @csrf
-                <label for="first">first</label>
+                <label for="first">Имя</label>
                 <input type="text"
                        class="form-control"
                        id="first"
-                       name="first"
-                       placeholder=" first">
+                       name="first">
                 <br><br>
-                <label for="last">last</label>
+                <label for="last">Фамилия</label>
                 <input type="text"
                        class="form-control"
                        id="last"
-                       name="last"
-                       placeholder=" last">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                       name="last">
+                <br>
+                <button type="submit" class="btn btn-primary">Добавить</button>
             </form>
         </div>
-    </div>
+    </main>
 @endsection
