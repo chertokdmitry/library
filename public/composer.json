@@ -9,6 +9,7 @@
         "elasticsearch/elasticsearch": "^6.0",
         "fideloper/proxy": "^4.0",
         "fzaninotto/faker": "^1.8",
+        "guzzlehttp/guzzle": "~6.0",
         "laravel/framework": "5.7.*",
         "laravel/scout": "3.0",
         "laravel/tinker": "^1.0",

@@ -103,6 +103,16 @@
                         </a>
                     </li>
                 </ul>
+
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/redirect">
+                            <span data-feather="users"></span>
+                            Получить токен
+                        </a>
+                    </li>
+                </ul>
+
             </div>
         </nav>
             @section('content')
