@@ -22,14 +22,14 @@ Route::get('/redirect', function (Request $request) {
     $request->session()->put('state', $state = Str::random(40));
 
     $query = http_build_query([
-        'client_id' => '4',
-        'redirect_uri' => 'http://library.loc/callback',
+        'client_id' => '5',
+        'redirect_uri' => 'http://library.devfolio.ru/callback',
         'response_type' => 'code',
         'scope' => '*',
         'state' => $state,
     ]);
 
-    return redirect('http://trains.loc/oauth/authorize?'.$query);
+    return redirect('http://timetable.devfolio.ru/oauth/authorize?'.$query);
 });
 
 Auth::routes();
@@ -37,12 +37,12 @@ Auth::routes();
 Route::get('/callback', function (Request $request) {
     $http = new GuzzleHttp\Client;
 
-    $response = $http->post('http://trains.loc/oauth/token', [
+    $response = $http->post('http://timetable.devfolio.ru/oauth/token', [
         'form_params' => [
             'grant_type' => 'authorization_code',
-            'client_id' => '4',
-            'client_secret' => 'I8XoS8XwQz57mTtGCh3ctQWPhQkR516lmRvtzY2h',
-            'redirect_uri' => 'http://library.loc/callback',
+            'client_id' => '5',
+            'client_secret' => '0LHajBtN2AlQUSlvTK4xpDMDUyTG8NZP0OAzGaHk',
+            'redirect_uri' => 'http://library.devfolio.ru/callback',
             'code' => $request->code,
         ],
     ]);
